@@ -1,19 +1,16 @@
-# EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech via Emotion-Adaptive Spherical Vector <br><sub>The official implementation of EmoSphere++</sub>
+# EmoSphere-TTS: Emotional Style and Intensity Modeling via Spherical Emotion Vector for Controllable Emotional Text-to-Speech <br><sub>The official implementation of EmoSphere-TTS</sub>
+##  <a src="https://img.shields.io/badge/cs.CV-2406.07803-b31b1b?logo=arxiv&logoColor=red" href="https://arxiv.org/abs/2406.07803"> <img src="https://img.shields.io/badge/cs.CV-2406.07803-b31b1b?logo=arxiv&logoColor=red"></a>|[Demo page](https://emosphere-tts.github.io/)
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/87d79c36-790e-488d-8837-9ef40318dc57" width="80%" />
+**Deok-Hyeon Cho, Hyung-Seok Oh, Seung-Bin Kim, Sang-Hoon Lee, Seong-Whan Lee**
 
-</div>
-
-## <a src="https://img.shields.io/badge/cs.CV-2406.07803-b31b1b?logo=arxiv&logoColor=red" href=""> <img src="https://img.shields.io/badge/cs.CV-2406.07803-b31b1b?logo=arxiv&logoColor=red"></a>|[Demo page](https://choddeok.github.io/EmoSphere-Demo/)
-
-**Deok-Hyeon Cho, Hyung-Seok Oh, Seung-Bin Kim, Seong-Whan Lee**
-
-Department of Artificial Intelligence, Korea University, Seoul, Korea.
+Department of Artificial Intelligence, Korea University, Seoul, Korea  
 
 ## Abstract
-Emotional text-to-speech (TTS) technology has achieved significant progress in recent years; however, challenges remain owing to the inherent complexity of emotions and limitations of the available emotional speech datasets and models. Previous studies typically relied on limited emotional speech datasets or required extensive manual annotations, restricting their ability to generalize across different speakers and emotional styles. In this paper, we present EmoSphere++, an emotion-controllable zero-shot TTS model that can control emotional style and intensity to resemble natural human speech. We introduce a novel emotion-adaptive spherical vector that models emotional style and intensity without human annotation. Moreover, we propose a multi-level style encoder that can ensure effective generalization for both seen and unseen speakers. We also introduce additional loss functions to enhance the emotion transfer performance for zero-shot scenarios. We employ a conditional flow matching-based decoder to achieve high-quality and expressive emotional TTS in a few sampling steps. Experimental results demonstrate the effectiveness of the proposed framework.
+Despite rapid advances in the field of emotional text-to-speech (TTS), recent studies primarily focus on mimicking the average style of a particular emotion. As a result, the ability to manipulate speech emotion remains constrained to several predefined labels, compromising the ability to reflect the nuanced variations of emotion. In this paper, we propose EmoSphere-TTS, which synthesizes expressive emotional speech by using a spherical emotion vector to control the emotional style and intensity of the synthetic speech. Without any human annotation, we use the arousal, valence, and dominance pseudo-labels to model the complex nature of emotion via a Cartesian-spherical transformation. Furthermore, we propose a dual conditional adversarial network to improve the quality of generated speech by reflecting the multi-aspect characteristics. The experimental results demonstrate the model’s ability to control emotional style and intensity with high-quality expressive speech.
 
+![240312_model_overview_1](https://github.com/Choddeok/EmoSphere-TTS/assets/77186350/913610da-bfcc-4e60-b8fe-c1172b8dc154)
+
+------
 ## Training Procedure
 
 ### Environments
@@ -23,41 +20,24 @@ sudo apt install -y sox libsox-fmt-mp3
 bash mfa_usr/install_mfa.sh # install force alignment tools
 ```
 
-### Vocoder
-The BigVGAN 16k checkpoint will be released at a later date. In the meantime, please train using the official BigVGAN implementation or use the official HiFi-GAN checkpoint.
-- [[HiFi-GAN]](https://github.com/jik876/hifi-gan)
-- [[BigVGAN]](https://github.com/NVIDIA/BigVGAN)
-
-------
 ### 1. Preprocess data
-- Modify the config file to fit your environment.
-- We use ESD database, which is an emotional speech database that can be downloaded here: https://hltsingapore.github.io/ESD/.
 
-#### a) VAD Analysis
-- Steps for emotion-specific centroid extraction with VAD analysis
-```bash
-sh Analysis.sh
-```
+- We use ESD database, which is an emotional speech database that can be downloaded here: https://hltsingapore.github.io/ESD/. 
 
-#### b) Preprocessing
-- Steps for embedding extraction and binary dataset creation
 ```bash
 sh preprocessing.sh
 ```
 
-------
 ### 2. Training TTS module and Inference  
 ```bash
 sh train_run.sh
 ```
 
-------
 ### 3. Pretrained checkpoints
-- TTS module trained on 11M [[Download]](https://works.do/xO6ZtDB)
+- TTS module trained on 160k [[Download]](https://works.do/5eA33VN)
 
 ## Acknowledgements
 **Our codes are based on the following repos:**
 * [NATSpeech](https://github.com/NATSpeech/NATSpeech)
 * [PyTorch Lightning](https://github.com/PyTorchLightning/pytorch-lightning)
 * [BigVGAN](https://github.com/NVIDIA/BigVGAN)
-
