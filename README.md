@@ -5,7 +5,7 @@
 
 </div>
 
-## <a src="https://img.shields.io/badge/cs.CV-2406.07803-b31b1b?logo=arxiv&logoColor=red" href=""> <img src="https://img.shields.io/badge/cs.CV-2406.07803-b31b1b?logo=arxiv&logoColor=red"></a>|[Demo page](https://choddeok.github.io/EmoSphere-Demo/)
+## <a src="https://img.shields.io/badge/cs.CV-2411.02625-b31b1b?logo=arxiv&logoColor=red" href="https://arxiv.org/abs/2411.02625"> <img src="https://img.shields.io/badge/cs.CV-2411.02625-b31b1b?logo=arxiv&logoColor=red"></a>|[Demo page](https://choddeok.github.io/EmoSphere-Demo/)
 
 **Deok-Hyeon Cho, Hyung-Seok Oh, Seung-Bin Kim, Seong-Whan Lee**
 
