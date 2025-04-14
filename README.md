@@ -7,9 +7,10 @@
 
 ## <a src="https://img.shields.io/badge/cs.CV-2411.02625-b31b1b?logo=arxiv&logoColor=red" href="https://arxiv.org/abs/2411.02625"> <img src="https://img.shields.io/badge/cs.CV-2411.02625-b31b1b?logo=arxiv&logoColor=red"></a>|[Demo page](https://choddeok.github.io/EmoSphere-Demo/)
 
+**The official Pytorch implementation of EmoSphere++ (IEEE Transactions on Affective Computing 2025)**
+
 **Deok-Hyeon Cho, Hyung-Seok Oh, Seung-Bin Kim, Seong-Whan Lee**
 
-Department of Artificial Intelligence, Korea University, Seoul, Korea.
 
 ## Abstract
 Emotional text-to-speech (TTS) technology has achieved significant progress in recent years; however, challenges remain owing to the inherent complexity of emotions and limitations of the available emotional speech datasets and models. Previous studies typically relied on limited emotional speech datasets or required extensive manual annotations, restricting their ability to generalize across different speakers and emotional styles. In this paper, we present EmoSphere++, an emotion-controllable zero-shot TTS model that can control emotional style and intensity to resemble natural human speech. We introduce a novel emotion-adaptive spherical vector that models emotional style and intensity without human annotation. Moreover, we propose a multi-level style encoder that can ensure effective generalization for both seen and unseen speakers. We also introduce additional loss functions to enhance the emotion transfer performance for zero-shot scenarios. We employ a conditional flow matching-based decoder to achieve high-quality and expressive emotional TTS in a few sampling steps. Experimental results demonstrate the effectiveness of the proposed framework.
@@ -70,6 +71,19 @@ sh Analysis.sh
 
 #### b) Preprocessing
 - Steps for embedding extraction and binary dataset creation
+
+Before running the script below, please set the following paths in preprocessing.sh:
+
+- wav_directory: path to your original wav files
+
+- wavlm_save_directory: path to save extracted WavLM embeddings
+
+- emotion2vec_save_directory: path to save Emotion2Vec embeddings
+
+For binary dataset creation, we follow the pipeline from [[NATSpeech]](https://github.com/NATSpeech/NATSpeech).
+
+**Note: You do not need to run MFA (Montreal Forced Aligner) for our setting.**
+
 ```bash
 sh preprocessing.sh
 ```
@@ -84,6 +98,16 @@ sh train_run.sh
 ### 3. Pretrained checkpoints
 - TTS module trained on 11M [[Download]](https://works.do/xO6ZtDB)
 
+## Citation
+```bash
+@article{cho2025emospherepp,
+  title={EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech via Emotion-Adaptive Spherical Vector},
+  author={Cho, Deok-Hyeon and Oh, Hyung-Seok and Kim, Seung-Bin and Lee, Seong-Whan},
+  journal={IEEE Transactions on Affective Computing},
+  year={2025},
+  publisher={IEEE}
+}
+```
 ## Acknowledgements
 **Our codes are based on the following repos:**
 * [NATSpeech](https://github.com/NATSpeech/NATSpeech)
