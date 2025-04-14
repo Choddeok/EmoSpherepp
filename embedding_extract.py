@@ -90,5 +90,5 @@ if __name__ == "__main__":
     parser.add_argument("--emotion2vec_save_directory", type=str, default="/workspace/choddeok/hd0/dataset/ESD_emb/Emotion2Vec")
     args = parser.parse_args()
     
-    WavLM_embeddings(args.wav_directory, args.save_directory)
-    Emotion2Vec_embeddings(args.wav_directory, args.save_directory)
+    WavLM_embeddings(args.wav_directory, args.wavlm_save_directory)
+    Emotion2Vec_embeddings(args.wav_directory, args.emotion2vec_save_directory)
