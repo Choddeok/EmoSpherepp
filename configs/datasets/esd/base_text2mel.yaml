@@ -1,0 +1,31 @@
+audio_num_mel_bins: 80
+out_dims: 80 # Model's output dimension
+audio_sample_rate: 16000
+hop_size: 256 # For 22050Hz, 275 ~= 12.5 ms (0.0125 * sample_rate)
+win_size: 1024 # For 22050Hz, 1100 ~= 50 ms (If None, win_size: fft_size) (0.05 * sample_rate)
+fft_size: 1024 # Extra window size is filled with 0 paddings to match this parameter
+fmin: 0 # Set this to 55 if your speaker is male! if female, 95 should help taking off noise. (To test depending on dataset. Pitch info: male~[65, 260], female~[100, 525])
+fmax: 8000 # To be increased/reduced depending on data.
+f0_min: 80
+f0_max: 800
+griffin_lim_iters: 30
+pitch_extractor: parselmouth
+mel_vmin: -9.0314
+mel_vmax: 2.1758
+loud_norm: false
+
+num_spk: 10
+num_emo: 5
+num_valid_plots: 20
+valid_plots: [0, 1, 20, 21, 40, 41, 60, 61, 80, 81, 
+              400, 401, 420, 421, 440, 441, 460, 461, 480, 481 ]
+
+base_config: egs/egs_bases/tts/base.yaml
+raw_data_dir: /workspace/choddeok/hd0/dataset/ESD_en
+processed_data_dir: /workspace/choddeok/hd0/dataset/processed/ESD_all
+binary_data_dir: ''
+preprocess_cls: egs.datasets.audio.lj.preprocess.LJPreprocess
+binarization_args:
+  train_range: [871, -1]
+  test_range: [0, 523]
+  valid_range: [523, 871]

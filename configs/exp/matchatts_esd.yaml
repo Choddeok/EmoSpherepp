@@ -1,0 +1,9 @@
+base_config:
+  - configs/models/tts/matchatts.yaml
+  - configs/datasets/esd/base_text2mel.yaml
+# vocoder_cls: models.vocoder.hifigan.HiFiGAN
+# vocoder_config: configs/models/vocoder/hifigan.yaml
+# vocoder_ckpt: checkpoints/hifigan_universal_v1/g_02500000
+vocoder_cls: models.vocoder.bigvgan.BigVGAN
+vocoder_config: configs/models/vocoder/bigvgan_16k.yaml
+vocoder_ckpt: '/workspace/choddeok/hd0/checkpoints/vocoder/bigV_16k/g_05050000'

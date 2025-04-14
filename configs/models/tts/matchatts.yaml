@@ -1,0 +1,77 @@
+base_config: ./base.yaml
+task_cls: tasks.tts.matchatts.MatchaTTSTask
+dataset_cls: tasks.tts.dataset_utils.GradTTSDataset
+model_cls: models.tts.matchatts.MatchaTTS
+
+n_enc_channels: 192
+filter_channels: 768
+filter_channels_dp: 256
+n_heads: 2
+n_enc_layers: 6
+enc_kernel: 3
+enc_dropout: 0.1
+window_size: 4
+dec_dim: 64
+beta_min: 0.05
+beta_max: 20.0
+pe_scale: 1000
+
+use_spk_embed: false
+use_spk_id: true
+n_spks: 10
+spk_emb_dim: 64
+
+solver: euler
+sigma_min: 1e-4
+
+channels: [256, 256]
+dropout: 0.05
+attention_head_dim: 64
+n_blocks: 1
+num_mid_blocks: 2
+num_heads: 2
+act_fn: snakebeta
+down_block_type: "transformer"
+mid_block_type: "transformer"
+up_block_type: "transformer"
+
+out_size: 64
+
+lr: 0.0001
+scheduler: warmup # rsqrt|warmup|none|noam
+# train and eval
+max_sentences: 32
+warmup_updates: 4000
+
+max_updates: 1100000
+valid_infer_interval: 20000
+
+intensity: ""
+style: ""
+spk_emb: ""
+
+# duration
+dur_predictor_kernel: 3
+dur_predictor_layers: 2
+predictor_kernel: 5
+predictor_layers: 5
+predictor_dropout: 0.5
+
+# loss lambda
+lambda_dur: 1.0
+GRL_emo_GRL_weight: 0.1
+
+
+# VQ
+vq_n_emb: 32
+
+# GST model
+GST_E: 128
+GST_ref_enc_filters: [32, 32, 64, 64, 128, 128]
+GST_n_mels: 80
+GST_token_num: 10
+GST_num_heads: 8
+
+EDM_spk_GRL_weight: 0.5
+EDM_GRL_emo_GRL_weight: 0.5
+EDM_emo_GRL_weight: 0.5

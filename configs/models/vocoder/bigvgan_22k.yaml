@@ -1,0 +1,57 @@
+base_config:
+  - ./base.yaml
+task_cls: tasks.vocoder.bigvgan.HifiGanTask
+
+resblock: "1"
+upsample_rates:
+  - 8
+  - 8
+  - 2
+  - 2
+upsample_kernel_sizes:
+  - 16
+  - 16
+  - 4
+  - 4
+upsample_initial_channel: 512
+resblock_kernel_sizes:
+  - 3
+  - 7
+  - 11
+resblock_dilation_sizes:
+  - - 1
+    - 3
+    - 5
+  - - 1
+    - 3
+    - 5
+  - - 1
+    - 3
+    - 5
+activation: "snakebeta"
+snake_logscale: true
+
+discriminator: "mrd"
+resolutions:
+  - - 1024
+    - 120
+    - 600
+  - - 2048
+    - 240
+    - 1200
+  - - 512
+    - 50
+    - 240
+mpd_reshapes:
+  - 2
+  - 3
+  - 5
+  - 7
+  - 11
+use_spectral_norm: false
+discriminator_channel_mult: 1
+
+lambda_adv: 4.0
+lambda_mel: 45.0
+use_fm_loss: true
+use_ms_stft: false
