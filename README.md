@@ -47,16 +47,7 @@ Emotional text-to-speech (TTS) technology has achieved significant progress in r
   apt-get install espeak -y
 
   # Clone repository in docker code path
-  git clone https://github.com/speech-team-korea/PRMLSpeech.git
-  Cloning into 'PRMLSpeech'...
-  Username for 'https://github.com': <username>
-  Password for 'https://<username>@github.com': <token>
-  remote: Enumerating objects: 363, done.
-  remote: Counting objects: 100% (363/363), done.
-  remote: Compressing objects: 100% (279/279), done.
-  remote: Total 363 (delta 67), reused 328 (delta 55), pack-reused 0
-  Receiving objects: 100% (363/363), 987.55 KiB | 17.63 MiB/s, done.
-  Resolving deltas: 100% (67/67), done.
+  git clone https://github.com/Choddeok/EmoSpherepp.git
 
   pip install -r requirements.txt
 ```
