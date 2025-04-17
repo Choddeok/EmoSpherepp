@@ -70,7 +70,7 @@ sh Analysis.sh
 ```
 
 #### b) Preprocessing
-- Steps for embedding extraction and binary dataset creation
+- Steps for embedding extraction and binary dataset creation (https://huggingface.co/microsoft/wavlm-base-sv, https://huggingface.co/emotion2vec/emotion2vec_plus_large)
 
 Before running the script below, please set the following paths in preprocessing.sh:
 
