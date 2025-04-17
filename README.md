@@ -5,7 +5,7 @@
 
 </div>
 
-## <a src="https://img.shields.io/badge/cs.CV-2411.02625-b31b1b?logo=arxiv&logoColor=red" href="https://arxiv.org/abs/2411.02625"> <img src="https://img.shields.io/badge/cs.CV-2411.02625-b31b1b?logo=arxiv&logoColor=red"></a>|[Demo page](https://choddeok.github.io/EmoSphere-Demo/)
+## [Paper 📄](https://ieeexplore.ieee.org/document/10965917)|[Demo 🎧](https://choddeok.github.io/EmoSphere-Demo/)
 
 **The official Pytorch implementation of EmoSphere++ (IEEE Transactions on Affective Computing 2025)**
 
@@ -100,13 +100,16 @@ sh train_run.sh
 
 ## Citation
 ```bash
-@article{cho2025emospherepp,
-  title={EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech via Emotion-Adaptive Spherical Vector},
+@ARTICLE{10965917,
   author={Cho, Deok-Hyeon and Oh, Hyung-Seok and Kim, Seung-Bin and Lee, Seong-Whan},
-  journal={IEEE Transactions on Affective Computing},
+  journal={IEEE Transactions on Affective Computing}, 
+  title={EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech via Emotion-Adaptive Spherical Vector}, 
   year={2025},
-  publisher={IEEE}
-}
+  volume={},
+  number={},
+  pages={1-16},
+  keywords={Vectors;Text to speech;Aerospace electronics;Psychology;Complexity theory;Interpolation;Emotion recognition;Annotations;Wheels;Training;Emotional speech synthesis;emotion transfer;emotion style and intensity control;zero-shot text-to-speech},
+  doi={10.1109/TAFFC.2025.3561267}}
 ```
 ## Acknowledgements
 **Our codes are based on the following repos:**
