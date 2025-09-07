@@ -103,11 +103,11 @@ sh train_run.sh
 @ARTICLE{10965917,
   author={Cho, Deok-Hyeon and Oh, Hyung-Seok and Kim, Seung-Bin and Lee, Seong-Whan},
   journal={IEEE Transactions on Affective Computing}, 
-  title={EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech via Emotion-Adaptive Spherical Vector}, 
+  title={EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech Via Emotion-Adaptive Spherical Vector}, 
   year={2025},
-  volume={},
-  number={},
-  pages={1-16},
+  volume={16},
+  number={3},
+  pages={2365-2380},
   keywords={Vectors;Text to speech;Aerospace electronics;Psychology;Complexity theory;Interpolation;Emotion recognition;Annotations;Wheels;Training;Emotional speech synthesis;emotion transfer;emotion style and intensity control;zero-shot text-to-speech},
   doi={10.1109/TAFFC.2025.3561267}}
 ```
